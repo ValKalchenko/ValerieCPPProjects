@@ -7,6 +7,8 @@
 #include "./headers/Decisions.h"
 #include "./headers/Loops.h"
 #include "./headers/Functions.h"
+#include "./headers/Structs.h"
+#include "./headers/Circle.h"
 
 
 
@@ -68,11 +70,82 @@ int main() {
     // loops1();
 
     /* Functions */
-    string student = "Valerie Kalchenko";
-    string language = "C++";
-    string programmer = "Bjarne Stroustoup";
+    // string student = "Valerie Kalchenko";
+    // string language = "C++";
+    // string programmer = "Bjarne Stroustoup";
 
-    congradulate1(student, language, programmer);
+    // congradulate1(student, language, programmer);
+
+    /* Structs */
+    // accessStructMembers();
+
+    // declare a Person struct
+    // Person p;
+
+    // initialize the Person Structs fields
+    // p.heightInMeters = 1.8;
+    // p.weightInKilos = 96;
+
+    // display computed BMI
+    // cout << "Computed BMI is " << bodyMassIndex(p) << endl;
+    
+
+    /* OOP */
+    // declare and initialize a Circle object using no-arg constructor 
+    Circle circle1;
+
+    // declare local variables that will be used when calling circle1's getters
+    int r;
+    double a;
+
+    // output contents of circle1 to stdout
+    cout << "Circle 1: ";
+    circle1.printCircle();
+
+    // call circle1's setter to change radius
+    circle1.setRadius(5);
+
+    // output contents of circle1 to stdout
+    cout << "Circle 1: ";
+    circle1.printCircle();
+
+    // call circle1's compute method to change area
+    circle1.compute();
+
+    // output contents of circle1 to stdout
+    cout << "Circle 1: ";
+    circle1.printCircle();
+
+    // call circle1's getter methods 
+    // when calling getter methods, must provide local variable as argument
+    // the value in the radius field will be placed by the getter method into the 
+    // address of the local variable 
+    circle1.getRadius(r);
+    cout << "Radius 1: " << r << endl;
+
+    circle1.getArea(a);
+    cout << "Area 1: " << a << endl;
+
+    // declare and initialize Circle object using one-arg constructor
+    Circle circle2(3);
+
+    //output contents of circle2 to stdout
+    cout << "Circle 2: ";
+    circle2.printCircle();
+
+    // compute area of circle2
+    circle2.compute();
+
+    //output contents of circle2 to stdout
+    cout << "Circle 2: ";
+    circle2.printCircle();
+
+    // output if circle1 is equal to circle2 
+    cout << std::boolalpha;   
+    cout << "Circle 1 equals Circle2? " << circle1.equalCircle(circle2) << endl;
+
+    cout << "Circle 1 equals Circle2? " << (circle1.equalCircle(circle2) == 0 ? "false" : "true") << endl;
+    
+
     return 0;
-
 }
