@@ -8,7 +8,8 @@
 #include "./headers/Loops.h"
 #include "./headers/Functions.h"
 #include "./headers/Structs.h"
-#include "./headers/Circle.h"
+// #include "./headers/Circle.h"
+#include "./headers/Cylinder.h"
 
 
 
@@ -145,6 +146,63 @@ int main() {
     cout << "Circle 1 equals Circle2? " << circle1.equalCircle(circle2) << endl;
 
     cout << "Circle 1 equals Circle2? " << (circle1.equalCircle(circle2) == 0 ? "false" : "true") << endl;
+
+    // declare and initialize a Cylinder object using the no-arg constructor
+    Cylinder cylinder1;
+
+    // declare local variables that will be used when calling the cylinder's
+    // getter methods
+    int h;
+    double v;
+
+    // output the contents of cylinder1 to stdout
+    cout << "Cylinder 1: ";
+    cylinder1.printCylinder();
+
+    // set cylinder1's radius and compute its area
+    cylinder1.Circle::setRadius(5);
+    cylinder1.Circle::compute();
+
+    // output the contents of cylinder1 to stdout
+    cout << "Cylinder 1: ";
+    cylinder1.printCylinder();
+
+    // set cylinder1's height and compute its volume
+    cylinder1.setHeight(7);
+    cylinder1.compute();
+
+    // output the contents of cylinder1 to stdout
+    cout << "Cylinder 1: ";
+    cylinder1.printCylinder();
+
+    // call cylinder1's getter methods
+    cylinder1.getHeight(h);
+    cout << "Height 1: " << h << endl;
+    cylinder1.getVolume(v);
+    cout << "Volume 1: " << v << endl;
+
+    // declare and intialize another Cylinder using the two-arg constructor
+    Cylinder cylinder2(4, 2);
+
+    // output the contents of cylinder1 to stdout
+    cout << "Cylinder 2: ";
+    cylinder2.printCylinder();
+
+    cylinder2.Circle::compute();
+    cylinder2.compute();
+
+    // output the contents of cylinder1 to stdout
+    cout << "Cylinder 2: ";
+    cylinder2.printCylinder();
+
+    // output if cylinder1 is equal to cylinder2 
+    cout << std::boolalpha;   
+    cout << "Cylinder 1 equals Cylinder? " << cylinder1.equalCylinder(cylinder2) << endl;
+
+    cout << "Cylinder 1 equals Cylinder? " << (cylinder1.equalCylinder(cylinder2) == 0 ? "false" : "true") << endl;
+
+
+
     
 
     return 0;

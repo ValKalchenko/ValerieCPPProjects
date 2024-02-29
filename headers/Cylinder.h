@@ -3,6 +3,7 @@
 #include "Circle.h"
 
 
+
 // use C++ standard library namespace
 using namespace std;
 
@@ -65,5 +66,37 @@ class Cylinder : public Circle
         void getHeight(int& height) const
         {
             height = this->height;
+        }
+
+        // define the getter for the volume field 
+        void getVolume(double& volume) const
+        {
+            volume = this->volume;
+        }
+
+        void compute() override
+        {
+            double a;
+            this->Circle::getArea(a);
+            volume = height * a;
+        }
+
+        void printCylinder()
+        {
+            double a;
+            this->Circle::getArea(a);
+            int r;
+            this->Circle::getRadius(r);
+
+            cout << fixed << showpoint;
+            cout << setprecision(5);
+
+            cout << "radius=" << r << ", area=" << a << ", height=" << height << ", volume=" << volume << endl;
+        }
+
+        bool equalCylinder(const Cylinder& otherCylinder) const
+        {
+            return (height == otherCylinder.height &&
+                volume == otherCylinder.volume);
         }
 };
